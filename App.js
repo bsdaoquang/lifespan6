@@ -1,12 +1,9 @@
-import React from "react"
-import {View, Text} from 'react-native'
+import React from 'react';
+import {View, Text} from 'react-native';
+import {ScanScreen} from './components/scanScreen';
 
 const App = () => {
-  return(
-    <>
-      <Text>This is lifespan6</Text>
-    </>
-  )
-}
+  return <ScanScreen />;
+};
 
-export default App
+export default App;
