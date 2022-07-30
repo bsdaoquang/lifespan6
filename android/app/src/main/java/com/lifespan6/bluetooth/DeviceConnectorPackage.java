@@ -9,23 +9,22 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import javax.annotation.Nonnull;
-
 public class DeviceConnectorPackage implements ReactPackage {
+
     private DeviceConnector deviceConnector;
 
-    @Nonnull
     @Override
-    public List<ViewManager> createViewManagers(@Nonnull ReactApplicationContext reactContext) {
+    public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
         return Collections.emptyList();
     }
 
-    @Nonnull
     @Override
     public List<NativeModule> createNativeModules(
             ReactApplicationContext reactContext) {
         List<NativeModule> modules = new ArrayList<>();
-        modules.add(initDeviceConnector(reactContext));
+
+        modules.add(new DeviceConnector(reactContext));
+
         return modules;
     }
 
